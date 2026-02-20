@@ -3,44 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Parenting Playbook — Strategies You Can Trust</title>
+  <title>Practice Scenarios — The Parenting Playbook</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <header class="site-header">
+  <div class="container"> 
+    
+    <header class="site-header">
     <div class="logo">The Parenting Playbook</div>
-  </header>
+    </header>
 
   <main class="scenarios">
-    <h2>Parenting Scenarios</h2>
-    <p>
-      Every interaction shapes your child’s trust, empathy, and sense of security. In this activity, you’ll explore
-       real-life moments grounded in evidence-based approaches like nurturing parenting, emotion coaching, and
-       consistent limits.
-    </p>
+    <h2>Practice Scenarios</h2>
 
-     <ul>
-       <li>You’ll see a scenario and three possible responses.</li>
-       <li>Each choice affects long-term traits like <em>trust</em>, <em>empathy</em>, and <em>attachment</em>.</li>
-       <li>No one is perfect; practice, repair, and growth are part of the journey.</li>
-     </ul>
+    <p class="page-intro">
+      Every interaction shapes your child’s trust, empathy, and sense of security. In this activity, you’ll explore
+       real-life moments and learn ways to respond that is grounded in evidence-based science using gentle parenting concepts</p>
 
     <section class="scenario-picker" aria-label="Choose a scenario">
-      <h3>Choose a scenario</h3>
+      <h3>Pick One</h3>
 
-      <div class="scenario-buttons" role="navigation" aria-label="Scenario options">
-        <button class="btn" type="button" data-scenario="tantrum">Tantrum / Meltdown</button>
-        <button class="btn" type="button" data-scenario="backtalk">Backtalk / Attitude</button>
-        <button class="btn" type="button" data-scenario="transitions">Transitions (leave/bedtime)</button>
-        <button class="btn" type="button" data-scenario="siblings">Sibling conflict</button>
-        <button class="btn" type="button" data-scenario="homework">Homework / refusal</button>
+      <div class="scenario-buttons">
+        <button class="btn" type="button">Tantrum / Meltdown</button>
+        <button class="btn" type="button">Backtalk / Attitude</button>
+        <button class="btn" type="button">Transitions (leave/bedtime)</button>
+        <button class="btn" type="button">Sibling conflict</button>
+        <button class="btn" type="button">Homework / refusal</button>
       </div>
     </section>
 
-    <div class="back-link">
-      <a class="btn" href="index.html">⬅ Back to Home</a>
-    </div>
+    <section class="scenario-output">
+      <div class="card">
+        <p><strong>What to do</strong></p>
+        <p>Choose a scenario above to see suggestions.</p>
+      </div>
+    </section>
 
     <nav aria-label="Page">
       <a href="index.html">Home</a>
@@ -48,7 +46,10 @@
       <a href="resources.html">Resources</a>
     </nav>
   </main>
-
+   <footer class="site-footer">
+    <p>Built as a human-centered web project using HTML, CSS, and JavaScript.</p>
+  </footer>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
