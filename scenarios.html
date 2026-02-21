@@ -24,21 +24,33 @@
     <section class="scenario-picker" aria-label="Choose a scenario">
       <h3>Pick One</h3>
 
-      <div class="scenario-buttons">
-        <button class="btn" type="button">Tantrum / Meltdown</button>
-        <button class="btn" type="button">Backtalk / Attitude</button>
-        <button class="btn" type="button">Transitions (leave/bedtime)</button>
-        <button class="btn" type="button">Sibling conflict</button>
-        <button class="btn" type="button">Homework / refusal</button>
-      </div>
+     <div class="scenario-buttons">
+  <button class="btn" type="button" data-scenario="tantrum">Tantrum / Meltdown</button>
+  <button class="btn" type="button" data-scenario="backtalk">Backtalk / Attitude</button>
+  <button class="btn" type="button" data-scenario="transitions">Transitions (leave/bedtime)</button>
+  <button class="btn" type="button" data-scenario="siblings">Sibling conflict</button>
+  <button class="btn" type="button" data-scenario="homework">Homework / refusal</button>
+</div>
     </section>
 
-    <section class="scenario-output">
-      <div class="card">
-        <p><strong>What to do</strong></p>
-        <p>Choose a scenario above to see suggestions.</p>
-      </div>
-    </section>
+   <section class="scenario-output" aria-live="polite">
+  <div class="card">
+    <p><strong>What to say</strong></p>
+    <p id="sayThis">Choose a scenario above to see a script.</p>
+  </div>
+
+  <div class="card">
+    <p><strong>What to do</strong></p>
+    <ul id="doThis">
+      <li>Pick a scenario to see steps.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <p><strong>Why it works</strong></p>
+    <p id="whyThis">You’ll see the “why” here once you choose a scenario.</p>
+  </div>
+</section>
 
     <nav aria-label="Page">
       <a href="index.html">Home</a>
