@@ -1,47 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Parenting Playbook — Strategies You Can Trust</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parent Check-In — The Parenting Playbook</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <header class="site-header">
-        <a class="logo">The Parenting Playbook</a>
-    </header>
+  <header class="site-header">
+    <a class="logo" href="index.html">The Parenting Playbook</a>
+  </header>
 
-    <div class="container">
-
+  <div class="container">
     <main class="checkin">
-        <h2>How are you feeling right now?</h2>
+      <h2>How are you feeling right now?</h2>
+      <p class="page-intro">
+        Pause for a moment and choose the closest match. You do not have to be perfectly sure to start.
+      </p>
 
-        <select id="moodSelect">
-            <option value=>Choose One</option>
-            <option value="overwhelmed">Overwhelmed</option>
-            <option value="angry">Angry</option>
-            <option value="sad">Sad</option>
-            <option value="okay">Okay</option>
-            <option value="hopeful">Hopeful</option>
-        </select>
+      <label for="moodSelect">Choose your current mood:</label>
+      <select id="moodSelect">
+        <option value="">Choose one</option>
+        <option value="overwhelmed">Overwhelmed</option>
+        <option value="angry">Angry</option>
+        <option value="sad">Sad</option>
+        <option value="okay">Okay</option>
+        <option value="hopeful">Hopeful</option>
+      </select>
 
-        <button id="getSupportBtn">Get Support</button>
+      <button id="getSupportBtn" class="btn" type="button">Get Support</button>
 
-        <div id="supportMessage">
-            <p>It's okay to admit you need help</p>
-        </div>
-    
-        <nav aria-label="Page">
-            <a href="index.html">Home</a>
-            <a href="scenarios.html">Practice Scenarios</a>
-            <a href="resources.html">Resources</a>
-        </nav>
+      <div id="supportMessage" class="card" aria-live="polite"></div>
 
+      <nav class="page-nav" aria-label="Page">
+        <a href="index.html">Home</a>
+        <a href="scenarios.html">Practice Scenarios</a>
+        <a href="resources.html">Resources</a>
+      </nav>
     </main>
-    </div>
+  </div>
 
-    <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
