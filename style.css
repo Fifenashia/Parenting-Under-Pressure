@@ -107,3 +107,9 @@ select:focus {
   align-items: center;
   margin-top: 12px;
 }
+
+#scenarioTips {
+  list-style: none;
+  padding-left: 0;
+    margin-bottom: 0.75rem;
+}

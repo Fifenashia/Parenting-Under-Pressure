@@ -30,87 +30,100 @@ if (moodSelect && getSupportBtn && supportMessage) {
   });
 }
 
+
+// Practice Scenarios
 // Practice Scenarios
 
-const scenarioButtons = document.querySelector(".scenario-buttons");
-const sayThis = document.getElementById("sayThis");
-const doThis = document.getElementById("doThis");
-const whyThis = document.getElementById("whyThis");
+const scenarioSelect = document.getElementById("scenarioSelect");
+const scenarioIntro = document.getElementById("scenarioIntro");
+const scenarioTips = document.getElementById("scenarioTips");
+const scenarioWhy = document.getElementById("scenarioWhy");
 
-if (scenarioButtons && sayThis && doThis && whyThis) {
+if (scenarioSelect && scenarioIntro && scenarioTips && scenarioWhy) {
   const scenarios = {
     tantrum: {
-      say: "You are having a big feeling. I am here. You are safe.",
-      do: [
-        "Get down to their level and soften your voice.",
-        "Keep your words short. Less talking creates less fuel.",
-        "Hold the boundary: I will not let you hit. You can stomp.",
-        "When their body calms, offer a simple choice."
+      intro:
+        "Big feelings need safety first. Start by calming the moment instead of trying to fix everything at once.",
+      tips: [
+        "Get down to your child’s level and soften your voice.",
+        "Use fewer words and focus on safety first.",
+        "Hold the boundary calmly: 'I won’t let you hit. I’m here to help.'",
+        "Wait for regulation before trying to teach or correct."
       ],
       why:
-        "Kids cannot access logic when they are flooded. Co-regulation first helps their brain return to safety so learning can happen."
+        "Children cannot learn well when they are overwhelmed. Co-regulation helps their brain return to safety before problem-solving."
     },
     backtalk: {
-      say: "I hear you are frustrated. We can talk when we are respectful.",
-      do: [
-        "Pause before responding and take two breaths.",
-        "Name the limit: I will not be spoken to that way.",
-        "Offer a redo: Try again with a calmer voice.",
-        "If it escalates, step away briefly and return."
+      intro:
+        "Backtalk often shows frustration, overwhelm, or a need for control. You can stay calm and hold the limit at the same time.",
+      tips: [
+        "Pause before responding and take two slow breaths.",
+        "Keep your voice steady and avoid matching your child’s intensity.",
+        "Set the limit clearly: 'I will listen when we speak respectfully.'",
+        "Offer a chance to try again with a calmer tone."
       ],
       why:
-        "This teaches tone and respect without creating a power struggle. A redo builds skills instead of shame."
+        "A calm response teaches respect more effectively than a power struggle. Boundaries and connection can work together."
     },
     transitions: {
-      say: "I am going to help your body get ready to switch.",
-      do: [
-        "Give a heads-up: five minutes, then two minutes.",
-        "Use one clear next step: Shoes on.",
-        "Offer a choice inside the boundary: Walk or hop?",
-        "Praise progress, not perfection."
+      intro:
+        "Transitions can be hard because children are being asked to stop, shift, and move before they feel ready.",
+      tips: [
+        "Give a simple warning before the transition: five minutes, then two.",
+        "Use one clear next step instead of a long explanation.",
+        "Offer a small choice inside the boundary, like 'walk or hop to the bathroom?'",
+        "Notice and praise cooperation, even if it is incomplete."
       ],
       why:
-        "Transitions are hard because kids have to shift attention and control impulses. Predictability and choices reduce resistance."
+        "Predictability and small choices help reduce resistance because they support regulation and a sense of control."
     },
     siblings: {
-      say: "I will not let you hurt each other. I am going to help.",
-      do: [
-        "Separate first, talk second.",
-        "State the boundary: No hitting. No name-calling.",
-        "Reflect each child briefly without turning it into a courtroom.",
-        "Coach a repair: Tell them what you needed."
+      intro:
+        "Sibling conflict usually needs calm structure before problem-solving. Start by lowering the heat.",
+      tips: [
+        "Separate first if needed, then slow the moment down.",
+        "State the boundary clearly: 'I won’t let you hurt each other.'",
+        "Reflect each child’s feelings briefly without taking sides.",
+        "Coach a repair or a better way to ask for what they need."
       ],
       why:
-        "Safety comes first. When you reduce the heat, you can teach problem-solving and repair instead of reinforcing competition."
+        "When children feel safe and heard, they are more able to practice repair, problem-solving, and emotional regulation."
     },
     homework: {
-      say: "This feels hard. Let us make it smaller.",
-      do: [
-        "Break it into a tiny chunk, like five minutes or three problems.",
-        "Sit nearby for support, not control.",
-        "Ask: Do you want help or a quiet body next to you?",
-        "Celebrate effort, then take a short break."
+      intro:
+        "Homework struggles are often about overwhelm, frustration, or fear of getting it wrong, not laziness.",
+      tips: [
+        "Break the task into a very small starting point.",
+        "Stay nearby as support instead of hovering as control.",
+        "Ask whether they want help, company, or a quick break first.",
+        "Focus on effort and progress instead of perfection."
       ],
       why:
-        "Avoidance usually means overwhelm or fear of failure. Making it smaller builds confidence and reduces shutdown."
+        "Making the task feel manageable reduces stress and helps the child build confidence instead of shutting down."
     }
   };
 
-  scenarioButtons.addEventListener("click", (e) => {
-    const btn = e.target.closest("button[data-scenario]");
-    if (!btn) return;
+  scenarioSelect.addEventListener("change", () => {
+    const key = scenarioSelect.value;
 
-    const key = btn.dataset.scenario;
+    if (!key) {
+      scenarioIntro.textContent =
+        "Choose a scenario above to see a few grounded ideas for responding with connection and care.";
+      scenarioWhy.textContent = "The explanation will appear here.";
+      scenarioTips.innerHTML = "<li>Pick a scenario to get started.</li>";
+      return;
+    }
+
     const chosen = scenarios[key];
 
-    sayThis.textContent = chosen.say;
-    whyThis.textContent = chosen.why;
+    scenarioIntro.textContent = chosen.intro;
+    scenarioWhy.textContent = chosen.why;
 
-    doThis.innerHTML = "";
-    chosen.do.forEach((step) => {
+    scenarioTips.innerHTML = "";
+    chosen.tips.forEach((tip) => {
       const li = document.createElement("li");
-      li.textContent = step;
-      doThis.appendChild(li);
+      li.textContent = tip;
+      scenarioTips.appendChild(li);
     });
   });
 }
