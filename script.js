@@ -1,10 +1,13 @@
 // Parent Check-In
-
+// Grab the dropdown, button, and message area from checkin.html
 const moodSelect = document.getElementById("moodSelect");
 const getSupportBtn = document.getElementById("getSupportBtn");
 const supportMessage = document.getElementById("supportMessage");
 
+// Only run this section if all 3 elements exist on the page
 if (moodSelect && getSupportBtn && supportMessage) {
+  
+  // This object stores a support message for each mood option
   const messages = {
     overwhelmed:
       "Your system is overloaded. When everything feels urgent at once, your brain is trying to protect you from dropping something. Drop your shoulders. Inhale slowly through your nose for four. Exhale longer than you inhaled. Do that twice. Pick one thing for the next ten minutes. Let the rest of it wait.",
@@ -17,29 +20,34 @@ if (moodSelect && getSupportBtn && supportMessage) {
     hopeful:
       "Hope means your nervous system feels safe enough to imagine change. Use that hope for one small connection moment: a soft tone, eye contact, or a kind word."
   };
-
+  
+  // Listen for the user clicking the Get Support button
   getSupportBtn.addEventListener("click", () => {
     const mood = moodSelect.value;
 
+  // If the user has not chosen a mood yet, show a prompt/Validate user input
     if (!mood) {
       supportMessage.textContent = "Pick the closest mood to get started.";
       return;
     }
-
+  
+    // Show the matching support message for the selected mood
     supportMessage.textContent = messages[mood];
   });
 }
 
-
-// Practice Scenarios
 // Practice Scenarios
 
+// Grab the dropdown and the areas where the support content will appear
 const scenarioSelect = document.getElementById("scenarioSelect");
 const scenarioIntro = document.getElementById("scenarioIntro");
 const scenarioTips = document.getElementById("scenarioTips");
 const scenarioWhy = document.getElementById("scenarioWhy");
 
+// Only run this section if all scenario elements exist on the page
 if (scenarioSelect && scenarioIntro && scenarioTips && scenarioWhy) {
+
+  // This object stores the support content for each parenting scenario
   const scenarios = {
     tantrum: {
       intro:
@@ -103,9 +111,13 @@ if (scenarioSelect && scenarioIntro && scenarioTips && scenarioWhy) {
     }
   };
 
+  // Listen for the user changing the dropdown selection
   scenarioSelect.addEventListener("change", () => {
+  
+    // Save the selected scenario value
     const key = scenarioSelect.value;
 
+    // If no scenario is selected, reset the page to its default text
     if (!key) {
       scenarioIntro.textContent =
         "Choose a scenario above to see a few grounded ideas for responding with connection and care.";
@@ -114,12 +126,18 @@ if (scenarioSelect && scenarioIntro && scenarioTips && scenarioWhy) {
       return;
     }
 
+    // Find the matching scenario data from the object
     const chosen = scenarios[key];
 
+    // Update the intro and explanation text
     scenarioIntro.textContent = chosen.intro;
     scenarioWhy.textContent = chosen.why;
 
+    // Clear out the old list items before adding new ones
     scenarioTips.innerHTML = "";
+
+    // Loop through the tips array and create a new list item for each tip
+    // Review forEach
     chosen.tips.forEach((tip) => {
       const li = document.createElement("li");
       li.textContent = tip;
