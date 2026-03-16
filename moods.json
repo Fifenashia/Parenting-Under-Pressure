@@ -1,0 +1,37 @@
+{
+  "overwhelmed": {
+    "title": "You're feeling overwhelmed",
+    "validation": "That makes sense. When too much is happening at once, your nervous system can start to feel overloaded.",
+    "tip": "Pause and take one slow breath in, then a longer breath out. Let your shoulders drop.",
+    "reminder": "You do not have to solve everything in this moment.",
+    "nextStep": "Choose one small next step: get water, sit down, or give yourself 30 seconds before responding."
+  },
+  "angry": {
+    "title": "You're feeling angry",
+    "validation": "Anger often shows up when something feels unfair, stressful, or too much to carry.",
+    "tip": "Unclench your jaw and your hands. Step back if you can before responding.",
+    "reminder": "Your child may need your calm even when their behavior is hard.",
+    "nextStep": "Use a short pause phrase like: 'I need a moment, then I’ll help.'"
+  },
+  "sad": {
+    "title": "You're feeling sad",
+    "validation": "Sadness can make everything feel heavier, especially when you're still trying to care for someone else.",
+    "tip": "Put a hand on your chest and take one steady breath. Let yourself soften for a moment.",
+    "reminder": "You are still a caring parent, even on hard days.",
+    "nextStep": "Choose one gentle action: sit with your child, lower expectations, or ask for support."
+  },
+  "okay": {
+    "title": "You're feeling okay",
+    "validation": "Okay is enough. You do not have to be at your best to stay connected.",
+    "tip": "Check in with your body and notice what feels steady right now.",
+    "reminder": "Small moments of presence matter.",
+    "nextStep": "Use this moment to connect in one simple way: eye contact, a kind word, or a calm touch."
+  },
+  "hopeful": {
+    "title": "You're feeling hopeful",
+    "validation": "Hope can be a powerful starting place, even if things are still hard.",
+    "tip": "Take a breath and notice what feels possible right now.",
+    "reminder": "Connection grows through small, repeated moments.",
+    "nextStep": "Pick one positive action you want to practice with your child today."
+  }
+}

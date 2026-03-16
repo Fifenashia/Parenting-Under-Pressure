@@ -7,20 +7,6 @@ const supportMessage = document.getElementById("supportMessage");
 // Only run this section if all 3 elements exist on the page
 if (moodSelect && getSupportBtn && supportMessage) {
   
-  // This object stores a support message for each mood option
-  const messages = {
-    overwhelmed:
-      "Your system is overloaded. When everything feels urgent at once, your brain is trying to protect you from dropping something. Drop your shoulders. Inhale slowly through your nose for four. Exhale longer than you inhaled. Do that twice. Pick one thing for the next ten minutes. Let the rest of it wait.",
-    angry:
-      "Anger usually means something feels unfair, disrespected, or out of control. It is information. Unclench your jaw. Press your feet into the floor. Slow your breath just enough to create space before you speak. If you need a script: 'I need a minute to calm my body. We will talk in a moment.'",
-    sad:
-      "Sadness does not make you a bad parent. It means something matters to you. You are allowed to be human. Look around and name three neutral things you can see. Let your eyes focus. Let your breathing slow naturally. Lower the bar and choose connection over correction for five minutes.",
-    okay:
-      "You have enough capacity for one intentional move. One slow breath in. One slow breath out. Notice your posture. Notice one thing your child is doing right and say it out loud.",
-    hopeful:
-      "Hope means your nervous system feels safe enough to imagine change. Use that hope for one small connection moment: a soft tone, eye contact, or a kind word."
-  };
-  
   // Listen for the user clicking the Get Support button
   getSupportBtn.addEventListener("click", () => {
     const mood = moodSelect.value;
@@ -30,11 +16,18 @@ if (moodSelect && getSupportBtn && supportMessage) {
       supportMessage.textContent = "Pick the closest mood to get started.";
       return;
     }
-  
     // Show the matching support message for the selected mood
     supportMessage.textContent = messages[mood];
   });
 }
+fetch("moods.json")
+.then((response) => {
+return response.json();
+})
+
+
+
+
 
 // Practice Scenarios
 
